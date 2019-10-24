@@ -1,0 +1,8 @@
+[usel]
+	email = maxfiialkovskyi@protonmail.com
+[user]
+	name = Max Fiialkovskyi
+	email = maxfiialkovskyi@protonmail.com
+[core]
+	excludesfile = /home/janitor/.gitignore_global
+	editor = nvim
