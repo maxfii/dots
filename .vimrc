@@ -14,27 +14,37 @@ set iminsert=0
 set imsearch=-1
 set updatetime=100
 
-set rtp+=/usr/bin/fzf
+" set rtp+=/usr/bin/fzf
 
 imap jk <ESC>
-map <F8>  :FZF<CR>
+map <F8> Files<CR>
 map Q <Nop>
-
-set autoread
-autocmd FocusGained,CursorHold ?* if getcmdwintype() == '' | checktime | endif
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'sodapopcan/vim-twiggy'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-syntastic/syntastic'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
+" FZF mappings selecting mappings
+
 let g:airline_theme='minimalist'
+" this so airline doesn't put lots of text about keymap in the status
 let g:airline#extensions#keymap#enabled = 0
 
+" delete trailing whitespaces on :w
+autocmd BufWritePre * %s/\s\+$//e
 
 filetype plugin on
