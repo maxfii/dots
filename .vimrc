@@ -44,6 +44,8 @@ let g:airline_theme='minimalist'
 " this so airline doesn't put lots of text about keymap in the status
 let g:airline#extensions#keymap#enabled = 0
 
+let g:syntastic_python_checkers = ['mypy']
+
 " delete trailing whitespaces on :w
 autocmd BufWritePre * %s/\s\+$//e
 

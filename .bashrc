@@ -141,3 +141,5 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+
+. /home/janitor/.nix-profile/etc/profile.d/nix.sh
