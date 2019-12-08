@@ -13,6 +13,7 @@ set laststatus=2
 set iminsert=0
 set imsearch=-1
 set updatetime=100
+set clipboard+=unnamedplus
 
 " set rtp+=/usr/bin/fzf
 
@@ -35,6 +36,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'mattn/emmet-vim'
+Plug 'godlygeek/tabular'
+Plug 'nbouscal/vim-stylish-haskell'
+Plug 'tpope/vim-vinegar'
 
 call plug#end()
 
@@ -45,6 +49,7 @@ let g:airline_theme='minimalist'
 let g:airline#extensions#keymap#enabled = 0
 
 let g:syntastic_python_checkers = ['mypy']
+
 
 " delete trailing whitespaces on :w
 autocmd BufWritePre * %s/\s\+$//e

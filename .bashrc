@@ -97,6 +97,7 @@ alias np='nano -w PKGBUILD'
 alias more=less
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vim=nvim
+alias vi=nvim
 
 set editing-mode vi
 
@@ -141,5 +142,7 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+
+export PATH=$PATH:/home/janitor/.gem/ruby/2.6.0/bin:~/.dotnet/tools
 
 . /home/janitor/.nix-profile/etc/profile.d/nix.sh
