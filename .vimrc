@@ -15,8 +15,6 @@ set imsearch=-1
 set updatetime=100
 set clipboard+=unnamedplus
 
-" set rtp+=/usr/bin/fzf
-
 imap jk <ESC>
 map <F8> Files<CR>
 map Q <Nop>
@@ -28,10 +26,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'sodapopcan/vim-twiggy'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'vim-syntastic/syntastic'
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -39,19 +36,24 @@ Plug 'mattn/emmet-vim'
 Plug 'godlygeek/tabular'
 Plug 'nbouscal/vim-stylish-haskell'
 Plug 'tpope/vim-vinegar'
+Plug 'masukomi/vim-markdown-folding'
 
 call plug#end()
 
-" FZF mappings selecting mappings
-
-let g:airline_theme='minimalist'
-" this so airline doesn't put lots of text about keymap in the status
-let g:airline#extensions#keymap#enabled = 0
-
 let g:syntastic_python_checkers = ['mypy']
-
 
 " delete trailing whitespaces on :w
 autocmd BufWritePre * %s/\s\+$//e
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 
 filetype plugin on

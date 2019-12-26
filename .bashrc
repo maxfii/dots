@@ -146,3 +146,5 @@ ex ()
 export PATH=$PATH:/home/janitor/.gem/ruby/2.6.0/bin:~/.dotnet/tools
 
 . /home/janitor/.nix-profile/etc/profile.d/nix.sh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
