@@ -4,7 +4,6 @@ let overlay1 = self: super: with super;
         [
             yq
             jq
-            awk
             htop
             neovim
             discord
